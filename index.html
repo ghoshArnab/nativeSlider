@@ -1,0 +1,41 @@
+<!DOCTYPE = "HTML5">
+<html>
+
+<head>
+    <title>Pega Slider</title>
+    <link rel="stylesheet" href="css/slider.css">
+</head>
+<script src="js/slider.js"></script>
+<script>
+window.onload = function() {
+
+    var options = {
+        onSlide: function(slider) {
+            console.log(slider.currentRange);
+        },
+        afterInit: function(slider) {
+            slider.setRange(240);
+        }
+    }
+
+    window.Slider = pxSlider.create("#normalslider", options);
+
+    window.Slider2 = pxSlider.create("#stepslider");
+
+    Slider2.setRange(400);
+};
+</script>
+
+<body>
+    <div id="normalslider" data-rs-min='0' data-rs-max='250' class='sliderElement'>
+        <span class="pointer transitionable"></span>
+        <span class="sliderProgress transitionable"></span>
+    </div>
+    <div style="margin-top:100px"></div>
+    <div id="stepslider" data-rs-min='5000' data-rs-max='50000' data-rs-steps='20' class='sliderElement'>
+        <span class="pointer transitionable"></span>
+        <span class="sliderProgress transitionable"></span>
+    </div>
+</body>
+
+</html>

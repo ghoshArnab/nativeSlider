@@ -1,0 +1,104 @@
+.slider,
+.sliderElement,
+.sliderElement * {
+    box-sizing: border-box
+}
+
+.sliderElement {
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    position: relative;
+    padding: 0;
+    cursor: pointer
+}
+
+.sliderElement .pointer {
+    position: absolute;
+    width: 22px;
+    left: 23%;
+    background-color: #fefefe;
+    height: 22px;
+    top: -10px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2)
+}
+
+.sliderElement .pointer::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 6px;
+    left: 6px;
+    background-color: #b7b7b7;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3)
+}
+
+.slider,
+.sliderElement .sliderProgress {
+    display: inline-block;
+    width: 25%;
+    height: 100%
+}
+
+.transitionable {
+    transition: all .5s
+}
+
+.sliderElement .sliderProgress {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    border-radius: 5px;
+    background-color: #9f6;
+    box-shadow: 0 0 1px 1px rgba(102, 102, 102, .5) inset
+}
+
+.sliderProgress.caution {
+    background-color: #ffc
+}
+
+.sliderProgress.danger {
+    background-color: #f63
+}
+
+.slider {
+    z-index: 99;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    text-align: center
+}
+
+.slider.highlighted p,
+.slider:hover p {
+    display: block!important
+}
+
+.slider.stepped:not(:last-of-type) {
+    border-right: 2px solid #aaa
+}
+
+.slider:hover p {
+    transition: display .5s
+}
+
+.slider p {
+    font-weight: 700;
+    position: absolute;
+    font-size: 14px;
+    top: 15px;
+    right: -25px;
+    padding: 1px 3px;
+    color: #666;
+    display: none;
+    border-radius: 2px;
+    text-shadow: 1px 1px 1px rgba(102, 102, 102, .5)
+}
